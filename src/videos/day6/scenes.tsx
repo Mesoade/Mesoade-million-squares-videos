@@ -682,7 +682,17 @@ export const ComfortZone: React.FC = () => {
 
 // ---------- 8. Put your favorite photo on the wall ----------
 
-export const FavoritePhoto: React.FC = () => {
+export const FavoritePhoto: React.FC<{
+  label?: string;
+  title?: React.ReactNode;
+}> = ({
+  label = "The ask",
+  title = (
+    <>
+      Your <Em>favorite</Em> photo.
+    </>
+  ),
+}) => {
   const frame = useCurrentFrame();
   const p = useProgress();
   const COLS = 7;
@@ -711,11 +721,11 @@ export const FavoritePhoto: React.FC = () => {
   const flash = interpolate(frame, [92, 100, 116], [0, 1, 0], clamp);
 
   return (
-    <Panel label="The ask">
+    <Panel label={label}>
       <Sfx at={36} name="whoosh" volume={0.2} />
       <Sfx at={92} name="pop" volume={0.32} />
       <Title top={100} p={p(0, 14)} size={80}>
-        Your <Em>favorite</Em> photo.
+        {title}
       </Title>
       {new Array(COLS * ROWS).fill(0).map((_, i) => {
         const x = X0 + (i % COLS) * (T + G);
@@ -1043,7 +1053,10 @@ export const ClickStory: React.FC = () => {
 
 // ---------- 11. End card / CTA ----------
 
-export const EndCard: React.FC = () => {
+export const EndCard: React.FC<{
+  /** Live claimed count; null hides the line (when no fresh figure). */
+  claimed?: number | null;
+}> = ({ claimed = 6 }) => {
   const p = useProgress();
   const pulse = interpolate(
     useCurrentFrame(),
@@ -1119,31 +1132,36 @@ export const EndCard: React.FC = () => {
         >
           Claim your square — $10
         </div>
-        <div
-          style={{
-            marginTop: 38,
-            display: "flex",
-            alignItems: "center",
-            gap: 20,
-            fontFamily: SANS,
-            fontSize: 34,
-            letterSpacing: "0.08em",
-            color: C.dim,
-            opacity: p(36, 48),
-          }}
-        >
+        {claimed !== null ? (
           <div
             style={{
-              width: 22,
-              height: 22,
-              borderRadius: 11,
-              backgroundColor: C.orange,
+              marginTop: 38,
+              display: "flex",
+              alignItems: "center",
+              gap: 20,
+              fontFamily: SANS,
+              fontSize: 34,
+              letterSpacing: "0.08em",
+              color: C.dim,
+              opacity: p(36, 48),
             }}
-          />
-          <span>
-            <span style={{ color: C.cream }}>6</span> of 1,000,000 claimed
-          </span>
-        </div>
+          >
+            <div
+              style={{
+                width: 22,
+                height: 22,
+                borderRadius: 11,
+                backgroundColor: C.orange,
+              }}
+            />
+            <span>
+              <span style={{ color: C.cream }}>
+                {claimed.toLocaleString("en-US")}
+              </span>{" "}
+              of 1,000,000 claimed
+            </span>
+          </div>
+        ) : null}
       </AbsoluteFill>
     </Panel>
   );

@@ -117,6 +117,22 @@ Pick the scene by what the line *means*, not by the literal words.
 | How the product works | `ClickStory` | cursor clicks a tile, card expands |
 | Call to action | `EndCard` | mark, wordmark, headline, CTA pill, live claimed count |
 
+More scenes in `src/videos/math-vs-reality/scenes.tsx` (funnel math and plan vs. reality):
+
+| Talking point type | Scene | Idea |
+|---|---|---|
+| A plan or pipeline | `ThePlan` | big number counts up, three step cards with arrows, last one glows |
+| A percentage assumption | `OnePercent` | big % counts up, label, verdict chip |
+| "1 in N" | `HundredViewers` | 10×10 grid, one square lights up, the rest dim, title swaps |
+| Step-by-step arithmetic | `TheMath` / `Payoff` | stacked rows, the result ticks up, a progress bar fills to "all filled" |
+| Plan vs. reality | `MathVsLife` / `RealityCheck` | dashed plan line vs. flat orange line; plan bar vs. a to-scale sliver |
+| Two options | `TwoLevers` | two cards with an "or" badge |
+| Batches over time | `Batches` | week columns filling in turn, the next one dashed and pulsing |
+| Variety and diversity | `Mosaic` | wall of color-grouped squares with real photo tiles |
+
+`FavoritePhoto` takes `label`/`title`, and `EndCard` takes `claimed` (`null` hides
+the count when no fresh figure is available).
+
 Invent new scenes whenever none of these fits. Keep them inside the brand
 tokens and motion defaults. When a new scene works well, move it to
 `src/shared/` and add it to this table.
