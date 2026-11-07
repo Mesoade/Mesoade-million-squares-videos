@@ -28,6 +28,9 @@ export const Sfx: React.FC<{ at: number; name: SfxName; volume?: number }> = ({
   volume,
 }) => (
   <Sequence from={at} layout="none" name={`sfx: ${name}`}>
-    <Audio src={staticFile(`sfx/${name}.wav`)} volume={volume ?? DEFAULT_VOL[name]} />
+    <Audio
+      src={staticFile(`sfx/${name}.wav`)}
+      volume={volume ?? DEFAULT_VOL[name]}
+    />
   </Sequence>
 );

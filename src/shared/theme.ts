@@ -15,9 +15,7 @@ export const C = {
 export const SERIF = "Playfair Display";
 export const SANS = "Inter";
 
-// Speaker's head starts at ~y=870 (captions at ~y=1300). B-roll stays above
-// the head so the face and captions both remain visible.
-export const PANEL_H = 830;
+// Brand mark: 2x2 squares, top-left one orange (matches the site logo).
 
 export const EASE_OUT = Easing.bezier(0.16, 1, 0.3, 1);
 export const EASE_IN_OUT = Easing.bezier(0.65, 0, 0.35, 1);

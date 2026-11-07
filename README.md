@@ -1,15 +1,21 @@
-# Day 6 video edit (Remotion)
+# The Million Squares: videos
 
-B-roll and number graphics on top of the Day 6 talking-head clip. The captions are already burned into the source clip.
+Remotion edits for The Million Squares short-form videos. This repo is kept
+separate from the website repo on purpose: it isn't connected to Vercel.
 
-- B-roll panels cover the top of the frame (above y=1250), so the burned-in captions stay visible.
-- The only audio is the original voice plus synthesized sound effects (`public/sfx`). There is no music.
-- Photo tiles in `public/photos` are cropped from the site screenshot (`public/site.png`).
+- `CLAUDE.md` is the house style guide: constants, defaults, the scene
+  library and the workflow. Read it before starting a new video.
+- `src/shared/` holds the reusable kit: theme, B-roll `Panel`, `Sfx`, layout
+  and UI helpers.
+- `src/videos/<video>/` holds one folder per video. The first is `day6/`.
 
-## Setup
+## Run
 
-1. Put the raw clip at `public/day6.mp4`. It is git-ignored because of its size.
+1. Put the raw clip at `public/<video>/source.mp4`, e.g. `public/day6/source.mp4`.
+   Source clips are git-ignored because of their size.
 2. `npm i`
 3. Preview with `npx remotion studio`. Render with `npx remotion render Day6 out/day6-edited.mp4`.
 
-All cut points are in `src/Day6.tsx`, one `<Sequence>` per B-roll scene. The scenes live in `src/scenes.tsx`.
+`scripts/make-sfx.sh` regenerates the sound effects. `scripts/contact-sheet.sh`
+turns a clip into timestamped frame sheets, which is useful for reading
+captions and measuring the framing.

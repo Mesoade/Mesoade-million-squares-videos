@@ -1,5 +1,5 @@
 import { Composition } from "remotion";
-import { DURATION, Day6, FPS } from "./Day6";
+import { DURATION, Day6, FPS } from "./videos/day6/Day6";
 
 export const RemotionRoot: React.FC = () => {
   return (
