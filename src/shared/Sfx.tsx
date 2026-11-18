@@ -9,7 +9,12 @@ export type SfxName =
   | "ding"
   | "click"
   | "thud"
-  | "riser";
+  | "riser"
+  | "shot"
+  | "shutter"
+  | "type"
+  | "boom"
+  | "drone";
 
 const DEFAULT_VOL: Record<SfxName, number> = {
   whoosh: 0.18,
@@ -19,6 +24,11 @@ const DEFAULT_VOL: Record<SfxName, number> = {
   click: 0.45,
   thud: 0.5,
   riser: 0.28,
+  shot: 0.32,
+  shutter: 0.3,
+  type: 0.16,
+  boom: 0.45,
+  drone: 0.22,
 };
 
 /** A sound effect that fires at `at` frames into the parent Sequence. */

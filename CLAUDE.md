@@ -121,6 +121,24 @@ Invent new scenes whenever none of these fits. Keep them inside the brand
 tokens and motion defaults. When a new scene works well, move it to
 `src/shared/` and add it to this table.
 
+## Alternate style: "case file" (`src/videos/bachmeier/`)
+
+For story videos about real people (the series sharing remarkable stories),
+the owner asked for a different edit. What it does:
+- Graded footage (desaturated, contrast, grain, vignette) for the past; the
+  grade lifts to clean colour when the story reaches the present day (the wall).
+- Camera moves on the speaker: slow push-ins, hard punch-ins with a white
+  flash and shake on impact words.
+- Overlays fade in over a soft dark scrim above the head (no wipe panel):
+  typed dates (Special Elite), slammed stamps (Bebas Neue), real photos as
+  taped prints, one blood-red accent (`#c8281e`).
+- Our own captions: Montserrat 800, white with a very thin black stroke,
+  words build as spoken (`captions.ts` + `Captions` in `look.tsx`).
+- Real photos come from Wikipedia/Commons (`public/<video>/img/`); label
+  them honestly (year, place).
+- Ends in the brand look: the photo flies onto the Million Squares wall,
+  then the end card.
+
 ## Workflow
 
 1. **Put the clip in place:** `public/<video>/source.mp4`. It's git-ignored
@@ -130,6 +148,10 @@ tokens and motion defaults. When a new scene works well, move it to
    `scripts/contact-sheet.sh public/<video>/source.mp4 <scratch>/sheets`, then
    read the sheets. You get the words with timestamps to ~0.5s (use fps=4
    for tight cuts). Whisper models usually can't be downloaded here.
+   **Clips without captions:** sherpa-onnx models download from GitHub
+   releases (`k2-fsa/sherpa-onnx/releases/download/asr-models/…`); use
+   `sherpa-onnx-nemo-parakeet-tdt-0.6b-v2-int8` (`pip install sherpa-onnx`)
+   for word timestamps, then fix names by hand.
 3. **Measure the footage:** grab a full-res frame
    (`ffmpeg -ss 5 -i clip -frames:v 1 f.png`) and note the head top and the
    caption band. Check the sheets for movement across the whole clip, then
