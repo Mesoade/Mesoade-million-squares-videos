@@ -39,15 +39,12 @@ const SHOTS: Shot[] = [
   { name: "Treehouse approach", kind: "video", clip: "C0002", at: 0.4, dur: 5.2, in: "fade", inLen: 18, leak: true },
   { name: "Heart bridge", kind: "photo", photo: "p76", dur: 3.6, in: "fade", inLen: 18, from: still(1.04, 0, 0), to: still(1.18, 2, 3) },
   { name: "Walking the lit bridge", kind: "video", clip: "C0003", at: 3.3, dur: 5.6, in: "fade", inLen: 15 },
-  { name: "Swing", kind: "photo", photo: "p77", dur: 3.2, in: "fade", inLen: 15, leak: true, from: still(1.12, -3, 0), to: still(1.12, 3, 0) },
-  { name: "Dinner set", kind: "photo", photo: "treetopia", dur: 3.2, in: "fade", inLen: 15, from: still(1.02), to: still(1.12, 0, -2) },
-  { name: "Dome and kitchen", kind: "photo", photo: "p81", dur: 3.0, in: "fade", inLen: 15, from: still(1.14, 3, 0), to: still(1.06, -2, 0) },
+  { name: "Dinner set", kind: "photo", photo: "treetopia", dur: 3.4, in: "fade", inLen: 15, leak: true, from: still(1.02), to: still(1.12, 0, -2) },
   { name: "Tub deck", kind: "photo", photo: "p72", dur: 3.0, in: "fade", inLen: 15, from: still(1.04, 0, 2), to: still(1.14, 0, 0) },
   { name: "Walkway", kind: "photo", photo: "p73", dur: 3.2, in: "fade", inLen: 15, leak: true, from: still(1.16, 0, 0), to: still(1.04, 0, 0) },
 
   // ── Night falls ──────────────────────────────────────────────────────
   { name: "Deck at night", kind: "video", clip: "C0007", at: 0.5, dur: 4.4, in: "black", inLen: 24, from: still(1.0), to: still(1.08) },
-  { name: "Night railing", kind: "photo", photo: "p70", dur: 3.2, in: "fade", inLen: 18, from: still(1.04), to: still(1.15, -2, 1) },
 
   // ── Act 2: walking in ────────────────────────────────────────────────
   { name: "They arrive", kind: "video", clip: "C0009", at: 0.4, dur: 8.6, in: "fade", inLen: 20 },
@@ -65,16 +62,9 @@ const SHOTS: Shot[] = [
 
   // ── Celebration ──────────────────────────────────────────────────────
   { name: "Together by the sign", kind: "video", clip: "C0009", at: 46.4, dur: 2.6, in: "fade", inLen: 15 },
-  { name: "Embrace", kind: "video", clip: "C0010", at: 0.0, dur: 9.0, in: "fade", inLen: 15, leak: true },
   { name: "Joy (photo)", kind: "photo", photo: "p22", dur: 3.0, in: "fade", inLen: 12, from: still(1.04), to: still(1.14, 2, 0) },
-  { name: "B&W hug", kind: "photo", photo: "p25", dur: 2.4, in: "fade", inLen: 10, from: still(1.06), to: still(1.14) },
-  { name: "B&W pose", kind: "photo", photo: "p07", dur: 2.4, in: "fade", inLen: 10, from: still(1.12, 2, 0), to: still(1.04, 0, 0) },
-  { name: "B&W kiss", kind: "photo", photo: "p11", dur: 2.6, in: "fade", inLen: 10, from: still(1.04), to: still(1.16, 3, 0) },
-  { name: "Close-up and kiss", kind: "video", clip: "C0011", at: 1.0, dur: 6.6, in: "fade", inLen: 15 },
-  { name: "Kiss (photo)", kind: "photo", photo: "p10", dur: 3.2, in: "fade", inLen: 12, from: still(1.02), to: still(1.12) },
-  { name: "Wine toast", kind: "video", clip: "C0012", at: 31.0, dur: 6.6, in: "fade", inLen: 15, leak: true },
-  { name: "Kitchen kiss (B&W)", kind: "photo", photo: "p02", dur: 3.6, in: "fade", inLen: 15, from: still(1.04), to: still(1.14) },
-  { name: "Final embrace", kind: "video", clip: "C0011", at: 8.4, dur: 5.4, in: "fade", inLen: 20 },
+  { name: "Kitchen kiss (B&W)", kind: "photo", photo: "p02", dur: 3.8, in: "fade", inLen: 15, from: still(1.04), to: still(1.14) },
+  { name: "Final embrace", kind: "video", clip: "C0010", at: 0.0, dur: 10.5, in: "fade", inLen: 18, leak: true },
 ];
 
 // Lay shots out: each one overlaps the previous by its fade length.
