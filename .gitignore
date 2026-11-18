@@ -8,3 +8,6 @@ out
 
 # Source footage (too large for git) — drop the raw clip here as public/*/source.mp4
 public/*/source.mp4
+
+# Private proposal footage and photos (never commit)
+public/proposal/
