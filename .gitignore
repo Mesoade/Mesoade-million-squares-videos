@@ -8,3 +8,6 @@ out
 
 # Source footage (too large for git) — drop the raw clip here as public/*/source.mp4
 public/*/source.mp4
+
+# Graded copy of the source (regenerate with scripts/doc-grade.txt)
+public/*/graded.mp4

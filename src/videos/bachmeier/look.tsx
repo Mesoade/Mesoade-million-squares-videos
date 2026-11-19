@@ -125,7 +125,7 @@ export const Typed: React.FC<{
   if (sound) {
     for (let i = 0; i < text.length; i += 2) {
       if (text[i] !== " ")
-        keys.push(<Sfx key={i} at={at + i * speed} name="type" />);
+        keys.push(<Sfx key={i} at={Math.round(at + i * speed)} name="type" />);
     }
   }
   return (

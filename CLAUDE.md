@@ -121,23 +121,31 @@ Invent new scenes whenever none of these fits. Keep them inside the brand
 tokens and motion defaults. When a new scene works well, move it to
 `src/shared/` and add it to this table.
 
-## Alternate style: "case file" (`src/videos/bachmeier/`)
+## Alternate style: documentary (`src/videos/bachmeier/`)
 
 For story videos about real people (the series sharing remarkable stories),
-the owner asked for a different edit. What it does:
-- Graded footage (desaturated, contrast, grain, vignette) for the past; the
-  grade lifts to clean colour when the story reaches the present day (the wall).
-- Camera moves on the speaker: slow push-ins, hard punch-ins with a white
-  flash and shake on impact words.
-- Overlays fade in over a soft dark scrim above the head (no wipe panel):
-  typed dates (Special Elite), slammed stamps (Bebas Neue), real photos as
-  taped prints, one blood-red accent (`#c8281e`).
+the owner asked for a Netflix-documentary edit. What it does (v2, after
+owner feedback: "Netflix doc grade, full-screen B-roll, dramatic zooms"):
+- **Grade:** the A-roll is pre-graded with ffmpeg using
+  `scripts/doc-grade.txt` (lifted teal shadows, warm skin, soft highlight
+  roll-off, vignette) into `public/<video>/graded.mp4` (git-ignored). No
+  black-and-white on the speaker. Light film grain on top.
+- **Full-screen B-roll for about half the runtime**, voice underneath:
+  archive photos (`Archive`: photo over a blurred copy of itself, slow Ken
+  Burns, snap-zooms on impact words) and black title cards with typed
+  dates (`TitleCard`). Doc lower thirds: Inter caps + thin red rule.
+- Speaker stays on screen for the hook-to-"shot" beat, the action beats
+  and the personal lines, with slow push-ins and hard punch-ins (white
+  flash + shake on gunshots).
+- Small upscaled photos: ffmpeg lanczos ×4 + unsharp (`*_hd.jpg`). Wide,
+  low-res photos must not be cover-filled to 9:16 (too soft); use the
+  blurred-background layout.
 - Our own captions: Montserrat 800, white with a very thin black stroke,
   words build as spoken (`captions.ts` + `Captions` in `look.tsx`).
-- Real photos come from Wikipedia/Commons (`public/<video>/img/`); label
-  them honestly (year, place).
-- Ends in the brand look: the photo flies onto the Million Squares wall,
-  then the end card.
+- Real photos from Wikipedia/Commons (`public/<video>/img/`), labelled
+  honestly (year, place).
+- Ends in the brand look: full-screen Million Squares wall (photo flies in,
+  camera pulls back), then the end card over the speaker.
 
 ## Workflow
 
